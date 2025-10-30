@@ -1,19 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvwurrt8iok4p"]
 
-[ext_resource type="Texture2D" uid="uid://buio5y1futf4o" path="res://assets/supay/supay (10).png" id="1_bt38q"]
+[ext_resource type="Texture2D" uid="uid://djov8ou3ykio7" path="res://assets/supay/supay (13).png" id="1_xtcmn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_45k5x"]
-size = Vector2(89, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7gbh"]
+size = Vector2(167, 218)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bt38q")
-hframes = 43
-vframes = 3
+position = Vector2(1, -119)
+texture = ExtResource("1_xtcmn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -127)
-shape = SubResource("RectangleShape2D_45k5x")
+position = Vector2(1.5, -119)
+shape = SubResource("RectangleShape2D_i7gbh")
