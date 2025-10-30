@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmomgsckrjefc"
-path="res://.godot/imported/ROCAS.png-5da05b8b79a7b651bf86a20037c78b49.ctex"
+uid="uid://vay61v3nlwjo"
+path="res://.godot/imported/PUENTE.png-d97bb6a70898f6d5e759be88c7074a7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/ROCAS.png"
-dest_files=["res://.godot/imported/ROCAS.png-5da05b8b79a7b651bf86a20037c78b49.ctex"]
+source_file="res://assets/ESCENARIO2/PUENTE.png"
+dest_files=["res://.godot/imported/PUENTE.png-d97bb6a70898f6d5e759be88c7074a7a.ctex"]
 
 [params]
 

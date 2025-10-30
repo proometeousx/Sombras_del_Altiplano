@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vay61v3nlwjo"
-path="res://.godot/imported/PUENTE.png-508e41e53d9d4d69b30da9e4f2ffa61c.ctex"
+uid="uid://bl3ksxq2qb4qx"
+path="res://.godot/imported/TERRENO.png-3c495ab38ac83297f06c7cbf9074c0c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/PUENTE.png"
-dest_files=["res://.godot/imported/PUENTE.png-508e41e53d9d4d69b30da9e4f2ffa61c.ctex"]
+source_file="res://assets/ESCENARIO2/TERRENO.png"
+dest_files=["res://.godot/imported/TERRENO.png-3c495ab38ac83297f06c7cbf9074c0c5.ctex"]
 
 [params]
 
