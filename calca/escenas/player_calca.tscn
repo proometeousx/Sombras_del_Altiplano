@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cra2fcp1dddgm"]
+
+[ext_resource type="Texture2D" uid="uid://b0720wro4rfcg" path="res://calca/calca-sprintsheet.png" id="1_tu7p3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fc8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy6c8"]
+atlas = ExtResource("1_tu7p3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjudi"]
+atlas = ExtResource("1_tu7p3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djbwr"]
+atlas = ExtResource("1_tu7p3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpouf"]
+atlas = ExtResource("1_tu7p3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x6s1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy6c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjudi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djbwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpouf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6fc8e")
+debug_color = Color(0.144968, 0.588025, 0.73033, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+position = Vector2(0, -5)
+scale = Vector2(0.625, 0.5625)
+sprite_frames = SubResource("SpriteFrames_x6s1d")
+animation = &"Idle"
+frame_progress = 0.616047
