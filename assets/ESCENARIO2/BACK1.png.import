@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl3ksxq2qb4qx"
-path="res://.godot/imported/TERRENO.png-a46b5c15a6745ce62ac8d9f08ba5d1dc.ctex"
+uid="uid://ppduojye0kwd"
+path="res://.godot/imported/BACK1.png-ccaa47e64fe26a59a5663916f65b682a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tilesets/TERRENO.png"
-dest_files=["res://.godot/imported/TERRENO.png-a46b5c15a6745ce62ac8d9f08ba5d1dc.ctex"]
+source_file="res://assets/ESCENARIO2/BACK1.png"
+dest_files=["res://.godot/imported/BACK1.png-ccaa47e64fe26a59a5663916f65b682a.ctex"]
 
 [params]
 
