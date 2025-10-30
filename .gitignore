@@ -1,0 +1,12 @@
+.godot/
+.import/
+.cache/
+*.tmp
+*.translation
+*.wav
+*.psd
+*.kra
+*.zip
+*.blend
+*.mp4
+*.avi
