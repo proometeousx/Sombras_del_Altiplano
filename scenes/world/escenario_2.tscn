@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://b1qeeowclrdq5"]
+[gd_scene load_steps=9 format=4 uid="uid://ugsjpd740bm6"]
 
 [ext_resource type="Texture2D" uid="uid://dcwkb8xvo1bxb" path="res://assets/ESCENARIO2/CERRRO DE POTOSI{.png" id="1_ugbkq"]
 [ext_resource type="Texture2D" uid="uid://ppduojye0kwd" path="res://assets/ESCENARIO2/BACK1.png" id="2_le12f"]
-[ext_resource type="Texture2D" uid="uid://bl3ksxq2qb4qx" path="res://assets/ESCENARIO2/terreno.png" id="3_o702w"]
+[ext_resource type="Texture2D" uid="uid://bl3ksxq2qb4qx" path="res://assets/ESCENARIO2/TERRENO.png" id="3_o702w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3owf0"]
 texture = ExtResource("1_ugbkq")
