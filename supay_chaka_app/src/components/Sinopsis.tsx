@@ -1,4 +1,4 @@
-import calcaPortrait from "@/assets/calca-portrait.jpg";
+import calcaPortrait from "@/assets/game2.png";
 
 const Synopsis = () => {
   return (

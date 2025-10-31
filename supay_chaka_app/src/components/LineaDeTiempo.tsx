@@ -1,7 +1,7 @@
-import phase1 from "@/assets/phase1-riverside.jpg";
-import phase2 from "@/assets/phase2-bridge.jpg";
+import phase1 from "@/assets/game5.png";
+import phase2 from "@/assets/game1.png";
 import phase3 from "@/assets/phase3-yoqalla.jpg";
-import phase4 from "@/assets/phase4-tower.jpg";
+import phase4 from "@/assets/game6.png";
 
 const phases = [
   {

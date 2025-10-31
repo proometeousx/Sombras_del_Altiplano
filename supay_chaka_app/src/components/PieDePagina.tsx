@@ -72,7 +72,7 @@ const Footer = () => {
             Un juego de terror psicológico y sigilo andino
           </p>
           <p className="text-xs text-stone font-merriweather">
-            © 2025 Supay Chaka Team. Basado en leyendas bolivianas.
+            © 2025 Las Sombras del Altiplano. Basado en leyendas bolivianas.
           </p>
         </div>
       </div>

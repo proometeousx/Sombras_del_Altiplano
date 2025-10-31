@@ -3,34 +3,24 @@ import stoneTexture from "@/assets/stone-texture.jpg";
 
 const teamMembers = [
   {
-    name: "Director del Proyecto",
-    role: "Visión Creativa y Narrativa",
-    description: "Arquitecto de la pesadilla andina"
+    name: "Vicente Claros",
+    role: "Director Técnico & Sonido",
+    description: "Líder del proyecto y atmósfera sonora"
   },
   {
-    name: "Diseñador de Niveles",
-    role: "Arquitectura del Terror",
-    description: "Creador de los escenarios coloniales"
+    name: "Marcelo Escobar",
+    role: "Diseñador de Gameplay",
+    description: "Arquitecto de mecánicas y experiencia del jugador"
   },
   {
-    name: "Artista Visual",
-    role: "Dirección de Arte",
-    description: "Guardián de la estética oscura"
+    name: "Ignacio Zarate",
+    role: "Director Técnico & IA",
+    description: "Desarrollador de IA y contenido multimedia del juego"
   },
   {
-    name: "Programador Principal",
-    role: "Mecánicas y Sistemas",
-    description: "Tejedor del código del sigilo"
-  },
-  {
-    name: "Diseñador de Sonido",
-    role: "Atmósfera Audio",
-    description: "Maestro del horror auditivo"
-  },
-  {
-    name: "Especialista en IA",
-    role: "Comportamiento del Supay",
-    description: "Dador de vida al demonio"
+    name: "Carla Encinas",
+    role: "Directora de Arte",
+    description: "Artista del terror visual y diseño sonoro"
   }
 ];
 
@@ -54,7 +44,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <Card 
               key={index}
