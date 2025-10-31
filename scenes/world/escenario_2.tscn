@@ -21027,7 +21027,7 @@ position = Vector2(36, -105)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_cwppu")]
 z_index = 1
-position = Vector2(-490, 234)
+position = Vector2(-502, 208)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 
