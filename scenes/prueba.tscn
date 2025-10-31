@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://bil7txlwc2ktt"]
 
 [ext_resource type="Texture2D" path="res://assets/Rocky Roads/Backgrounds/desert_b.png" id="1_aj34h"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://dpvuwfe673ao5"]
+
+[ext_resource type="Texture2D" uid="uid://w04a1n1lnx74" path="res://assets/Rocky Roads/Backgrounds/desert_b.png" id="1_aj34h"]
+>>>>>>> 60d7a6a4983128eb8bedbf18522a8000df16f7cb
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3ykl"]
 size = Vector2(768, 127)
