@@ -14,7 +14,7 @@ func _ready():
 	await voice1.finished
 	
 	# 2) Pausa entre voces
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	
 	# 3) Segundo diálogo
 	voice2.play()

@@ -12,7 +12,7 @@ func _ready():
 	voice1.play()
 	await voice1.finished
 
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	
 	voice2.play()
 	await voice2.finished

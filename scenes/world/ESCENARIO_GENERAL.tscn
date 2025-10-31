@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://gihqjehu0jr"]
+[gd_scene load_steps=29 format=4 uid="uid://b5tlyra1jche7"]
 
 [ext_resource type="Texture2D" uid="uid://beh0xiat58gvm" path="res://assets/ESCENARIO2/DESIERTO.png" id="1_0mla2"]
 [ext_resource type="Texture2D" uid="uid://cxnmh0pg56ju2" path="res://assets/ESCENARIO2/LAGUNA.png" id="2_b5330"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dd0n36hu1q22v" path="res://assets/ESCENARIO2/agua-Photoroom.png" id="10_lhim8"]
 [ext_resource type="PackedScene" uid="uid://bpx50a2hgrh16" path="res://scenes/enemies/SupayD/SupayD.tscn" id="11_2jquq"]
 [ext_resource type="PackedScene" uid="uid://cra2fcp1dddgm" path="res://calca/escenas/player_calca.tscn" id="11_o71lj"]
-[ext_resource type="PackedScene" uid="uid://77ud16wsf0h3" path="res://assets/piso123.tscn" id="11_r83fb"]
+[ext_resource type="PackedScene" path="res://assets/piso123.tscn" id="11_r83fb"]
 [ext_resource type="PackedScene" uid="uid://bb3its0jgxcll" path="res://chicken/escena_chicken/chickenbody.tscn" id="11_xcm0c"]
 [ext_resource type="Script" path="res://chicken/escena_chicken/chickenbody.gd" id="12_grmmu"]
 
