@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxx3mudj54wq8"]
+[gd_scene load_steps=3 format=3 uid="uid://cn8eg0a7p6km1"]
 
-[ext_resource type="PackedScene" uid="uid://cpjuh4x82knec" path="res://scenes/prueba.tscn" id="1_hymjk"]
+[ext_resource type="PackedScene" uid="uid://bil7txlwc2ktt" path="res://scenes/prueba.tscn" id="1_hymjk"]
 [ext_resource type="PackedScene" uid="uid://bpx50a2hgrh16" path="res://scenes/enemies/SupayD/SupayD.tscn" id="2_c7uxq"]
 
 [node name="level1" type="Node"]

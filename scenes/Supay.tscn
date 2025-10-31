@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bydee07jowst1"]
+[gd_scene load_steps=5 format=3 uid="uid://cqvmoa0qoej0t"]
 
 [ext_resource type="Script" path="res://scenes/supay.gd" id="1_rtgdq"]
 [ext_resource type="Texture2D" uid="uid://bvkdnwp0yyhfi" path="res://assets/supay/supay (14).png" id="1_v88yx"]
