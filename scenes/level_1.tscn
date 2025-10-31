@@ -15,4 +15,4 @@ position = Vector2(1134, 355)
 position = Vector2(-250, 357)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_c7uxq")]
-position = Vector2(458, 407)
+position = Vector2(507, 464)

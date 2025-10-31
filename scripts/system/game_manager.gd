@@ -1,6 +1,6 @@
 extends Node
 
-const PHASE_1 = preload("res://scenes/world/escenario_1.tscn")
+const PHASE_1 = preload("res://scenes/world/phase_1.tscn")
 
 @onready var phase_root = $GameLayer/PhaseRoot
 @onready var menu_layer = $MenuLayer
