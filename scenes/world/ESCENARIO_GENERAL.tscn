@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5y1ry5xoiber"]
+[gd_scene load_steps=4 format=3 uid="uid://b5tlyra1jche7"]
 
 [ext_resource type="Texture2D" uid="uid://beh0xiat58gvm" path="res://assets/ESCENARIO2/DESIERTO.png" id="1_0mla2"]
 [ext_resource type="Texture2D" uid="uid://cxnmh0pg56ju2" path="res://assets/ESCENARIO2/LAGUNA.png" id="2_b5330"]
