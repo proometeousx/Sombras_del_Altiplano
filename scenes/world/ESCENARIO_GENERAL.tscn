@@ -1,15 +1,16 @@
-[gd_scene load_steps=24 format=4 uid="uid://b5y1ry5xoiber"]
+[gd_scene load_steps=25 format=4 uid="uid://b5y1ry5xoiber"]
 
 [ext_resource type="Texture2D" uid="uid://beh0xiat58gvm" path="res://assets/ESCENARIO2/DESIERTO.png" id="1_0mla2"]
 [ext_resource type="Texture2D" uid="uid://cxnmh0pg56ju2" path="res://assets/ESCENARIO2/LAGUNA.png" id="2_b5330"]
 [ext_resource type="Texture2D" uid="uid://bklsu1rnk4aok" path="res://assets/escenario 3/campanario.png" id="3_xays3"]
-[ext_resource type="Texture2D" uid="uid://vay61v3nlwjo" path="res://assets/ESCENARIO2/PUENTE.png" id="4_q01ay"]
+[ext_resource type="Texture2D" uid="uid://vay61v3nlwjo" path="res://assets/Tilesets/PUENTE.png" id="4_q01ay"]
 [ext_resource type="Texture2D" uid="uid://cxh7w2if7wf8u" path="res://assets/ESCENARIO2/desert.webp" id="5_6ttrk"]
-[ext_resource type="Texture2D" uid="uid://dmomgsckrjefc" path="res://assets/ESCENARIO2/ROCAS.png" id="6_peuyg"]
+[ext_resource type="Texture2D" uid="uid://dmomgsckrjefc" path="res://assets/Tilesets/ROCAS.png" id="6_peuyg"]
 [ext_resource type="Texture2D" uid="uid://0npbgppda4t2" path="res://assets/ESCENARIO2/TIERRA-Photoroom.png" id="7_psgh3"]
 [ext_resource type="Texture2D" uid="uid://bvdlq8jpuqrly" path="res://assets/ESCENARIO2/Captura de pantalla 2025-10-31 032712-Photoroom.png" id="8_svoo4"]
 [ext_resource type="Texture2D" uid="uid://c4ksly5yojbfy" path="res://assets/ESCENARIO2/do-insane-2d-3d-unity-game-development-of-android-and-ios-Photoroom.png" id="9_oolgy"]
 [ext_resource type="Texture2D" uid="uid://dd0n36hu1q22v" path="res://assets/ESCENARIO2/agua-Photoroom.png" id="10_lhim8"]
+[ext_resource type="AudioStream" uid="uid://dyy4agarml4v8" path="res://assets/music/music DE FONDO.ogg" id="11_iclbq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yod3v"]
 texture = ExtResource("4_q01ay")
@@ -14433,7 +14434,7 @@ texture = ExtResource("10_lhim8")
 44:41/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1cyvu"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 sources/1 = SubResource("TileSetAtlasSource_smf2q")
 sources/2 = SubResource("TileSetAtlasSource_2gjpf")
 sources/3 = SubResource("TileSetAtlasSource_4dv12")
@@ -14481,3 +14482,8 @@ tile_map_data = PackedByteArray("AABoABwAAwALAAIAAABoAB0AAwALAAMAAABpABwAAwAMAAI
 tile_set = SubResource("TileSet_1cyvu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_iclbq")
+volume_db = -20.458
+pitch_scale = 2.04
+autoplay = true
+mix_target = 2
