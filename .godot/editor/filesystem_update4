@@ -1,0 +1,8 @@
+res://scenes/Supay.tscn
+res://scenes/supay.gd
+res://Main.tscn
+res://scripts/system/game_manager.gd
+res://scenes/enemies/SupayD/SupayD.tscn
+res://scenes/enemies/SupayD/supay_d.gd
+res://scenes/prueba.tscn
+res://scenes/level_1.tscn
