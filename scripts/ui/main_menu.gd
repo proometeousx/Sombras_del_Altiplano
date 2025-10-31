@@ -1,24 +1,16 @@
-extends Node
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+extends Control
+signal start_game
+signal options_requested
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/world/escenario_3.tscn")
-
+	# Botón: Nuevo juego
+	emit_signal("start_game")
 
 func _on_button_2_pressed() -> void:
-	pass # Replace with function body.
-
+	# Botón: Opciones (si luego quieres)
+	emit_signal("options_requested")
 
 func _on_button_3_pressed() -> void:
+	# Botón: Salir
 	get_tree().quit()
-	 # Replace with function body.
