@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2q5ld21r5rl4"
-path="res://.godot/imported/escenario3.jpg-9d18b8bda1925f1c1523a574dde451f8.ctex"
+uid="uid://dd0n36hu1q22v"
+path="res://.godot/imported/agua-Photoroom.png-2916d3fe3482c5acc42e8c5ee5f1efd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/escenario 3/escenario3.jpg"
-dest_files=["res://.godot/imported/escenario3.jpg-9d18b8bda1925f1c1523a574dde451f8.ctex"]
+source_file="res://assets/ESCENARIO2/agua-Photoroom.png"
+dest_files=["res://.godot/imported/agua-Photoroom.png-2916d3fe3482c5acc42e8c5ee5f1efd9.ctex"]
 
 [params]
 
