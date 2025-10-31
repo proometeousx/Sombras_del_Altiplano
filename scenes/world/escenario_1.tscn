@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://jmgpw28eo2qi"]
-
-[node name="Phase1" type="Node2D"]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0392157, 0.0509804, 0.0705882, 1)
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
