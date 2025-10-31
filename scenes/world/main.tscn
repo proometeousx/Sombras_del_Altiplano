@@ -1,37 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnoltt4jwllxc"]
 
-[sub_resource type="GDScript" id="GDScript_hdmar"]
-script/source = "extends Node
-
-const PHASE_1 = preload(\"res://scenes/world/escenario_1.tscn\")
-
-@onready var phase_root = $GameLayer/PhaseRoot
-@onready var menu_layer = $MenuLayer
-
-var current_phase: Node
-
-func _ready():
-	# por ahora no hay menú, así que cargamos directo la fase 1
-	load_phase_1()
-
-func load_phase_1():
-	if current_phase:
-		current_phase.queue_free()
-	var p = PHASE_1.instantiate()
-	phase_root.add_child(p)
-	current_phase = p
-"
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_01gij"]
 
 [node name="Main" type="Node2D"]
-script = SubResource("GDScript_hdmar")
+script = ExtResource("1_01gij")
 
-[node name="MenuLayer" type="CanvasLayer" parent="."]
+[node name="MenuLayer" type="Node" parent="."]
 
-[node name="GameLayer" type="Node2D" parent="."]
+[node name="GameLayer" type="Node" parent="."]
 
-[node name="PhaseRoot" type="Node2D" parent="GameLayer"]
-
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="Node" parent="."]
 
 [node name="Audio" type="Node" parent="."]
 
