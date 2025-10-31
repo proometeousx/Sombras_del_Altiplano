@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Supay Chaka Color System - Andean Dark Theme */
+    --background: 30 15% 3%;
+    --foreground: 0 0% 93%;
+
+    --card: 18 38% 13%;
+    --card-foreground: 0 0% 93%;
+
+    --popover: 18 38% 13%;
+    --popover-foreground: 0 0% 93%;
+
+    --primary: 8 73% 41%;
+    --primary-foreground: 0 0% 93%;
+
+    --secondary: 18 38% 13%;
+    --secondary-foreground: 0 0% 93%;
+
+    --muted: 18 38% 13%;
+    --muted-foreground: 40 8% 61%;
+
+    --accent: 45 87% 72%;
+    --accent-foreground: 30 15% 3%;
+
+    --destructive: 8 73% 41%;
+    --destructive-foreground: 0 0% 93%;
+
+    --border: 18 38% 20%;
+    --input: 18 38% 20%;
+    --ring: 8 73% 41%;
+
+    --radius: 0.5rem;
+
+    /* Custom Supay theme tokens */
+    --volcanic-black: 30 15% 3%;
+    --stone-brown: 18 38% 13%;
+    --supay-red: 8 73% 41%;
+    --lantern-gold: 45 87% 72%;
+    --ash-white: 0 0% 93%;
+    --stone-gray: 40 8% 61%;
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(30 15% 3%), hsl(18 38% 13%));
+    --gradient-red: linear-gradient(135deg, hsl(8 73% 41%), hsl(18 38% 13%));
+    --gradient-mystical: linear-gradient(180deg, hsl(30 15% 3% / 0.9), hsl(18 38% 13% / 0.95));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(8 73% 41% / 0.4);
+    --shadow-deep: 0 20px 60px -10px hsl(30 15% 3% / 0.8);
+    --shadow-lantern: 0 0 30px hsl(45 87% 72% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-mystical: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Merriweather', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel Decorative', serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-volcanic {
+    color: hsl(var(--volcanic-black));
+  }
+
+  .text-stone {
+    color: hsl(var(--stone-gray));
+  }
+
+  .text-supay {
+    color: hsl(var(--supay-red));
+  }
+
+  .text-lantern {
+    color: hsl(var(--lantern-gold));
+  }
+
+  .bg-volcanic {
+    background-color: hsl(var(--volcanic-black));
+  }
+
+  .bg-stone-brown {
+    background-color: hsl(var(--stone-brown));
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .gradient-red {
+    background: var(--gradient-red);
+  }
+
+  .gradient-mystical {
+    background: var(--gradient-mystical);
+  }
+
+  .glow-supay {
+    text-shadow: 0 0 40px hsl(8 73% 41% / 0.6), 0 0 20px hsl(8 73% 41% / 0.4);
+  }
+
+  .glow-lantern {
+    box-shadow: var(--shadow-lantern);
+  }
+
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+
+  .transition-mystical {
+    transition: var(--transition-mystical);
+  }
+
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+}
