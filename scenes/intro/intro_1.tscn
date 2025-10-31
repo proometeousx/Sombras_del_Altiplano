@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqdmgh54finun"]
+
+[ext_resource type="Script" path="res://scripts/intro/intro_1.gd" id="1_fxkil"]
+[ext_resource type="Texture2D" uid="uid://dd0pd774y0bu3" path="res://assets/intro_image/primera_escena.png" id="1_mjl2t"]
+[ext_resource type="AudioStream" uid="uid://ban3qc6ptifha" path="res://assets/music/intro/Narrador_1.ogg" id="3_msgaj"]
+[ext_resource type="AudioStream" uid="uid://bq8tkc8dth1rd" path="res://assets/music/intro/Supay_1.ogg" id="4_rcy2x"]
+
+[node name="Intro_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxkil")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(1.00155, 0.997163)
+texture = ExtResource("1_mjl2t")
+expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_msgaj")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rcy2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

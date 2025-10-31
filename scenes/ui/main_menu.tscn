@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx8c45ha1iquc"]
+[gd_scene load_steps=7 format=3 uid="uid://bx8c45ha1iquc"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_vycxt"]
 [ext_resource type="Texture2D" uid="uid://bqn0uki7cwhgm" path="res://assets/menu_assets/fondo_menu.png" id="2_n14r4"]
+[ext_resource type="Texture2D" uid="uid://cv175oh4jlp2e" path="res://assets/menu_assets/WhatsApp Image 2025-10-31 at 05.46.38-Photoroom.png" id="3_lbler"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igwk2"]
 bg_color = Color(0.301961, 0, 0, 1)
@@ -75,6 +76,14 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_w2vyd")
 text = "SALIR
 "
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 40.0
+offset_right = 1131.0
+offset_bottom = 284.0
+texture = ExtResource("3_lbler")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
