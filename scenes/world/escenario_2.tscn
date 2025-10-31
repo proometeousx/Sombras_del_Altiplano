@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://ugsjpd740bm6"]
+[gd_scene load_steps=9 format=4 uid="uid://b1qeeowclrdq5"]
 
 [ext_resource type="Texture2D" uid="uid://dcwkb8xvo1bxb" path="res://assets/ESCENARIO2/CERRRO DE POTOSI{.png" id="1_ugbkq"]
 [ext_resource type="Texture2D" uid="uid://ppduojye0kwd" path="res://assets/ESCENARIO2/BACK1.png" id="2_le12f"]
-[ext_resource type="Texture2D" uid="uid://bl3ksxq2qb4qx" path="res://assets/ESCENARIO2/TERRENO.png" id="3_o702w"]
+[ext_resource type="Texture2D" uid="uid://bl3ksxq2qb4qx" path="res://assets/Tilesets/TERRENO.png" id="3_o702w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3owf0"]
 texture = ExtResource("1_ugbkq")
@@ -21022,7 +21022,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_r0ntj")
 
 [node name="Escenario2" type="Node2D"]
-position = Vector2(36, -105)
+position = Vector2(9, -106)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl3ksxq2qb4qx"
-path="res://.godot/imported/TERRENO.png-3c495ab38ac83297f06c7cbf9074c0c5.ctex"
+uid="uid://3odgajjge6v8"
+path="res://.godot/imported/SUELO.jpg-a86d6f4bd41076e05b2aff1d8dcad134.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ESCENARIO2/TERRENO.png"
-dest_files=["res://.godot/imported/TERRENO.png-3c495ab38ac83297f06c7cbf9074c0c5.ctex"]
+source_file="res://assets/escenario 3/SUELO.jpg"
+dest_files=["res://.godot/imported/SUELO.jpg-a86d6f4bd41076e05b2aff1d8dcad134.ctex"]
 
 [params]
 
