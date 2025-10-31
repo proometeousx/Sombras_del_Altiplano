@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://77ud16wsf0h3"]
+
+[ext_resource type="Texture2D" uid="uid://3odgajjge6v8" path="res://assets/escenario 3/SUELO.jpg" id="1_dlv44"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7dh"]
+size = Vector2(466, 20)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(5, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(234, 0)
+shape = SubResource("RectangleShape2D_mu7dh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(234.375, 0.375)
+scale = Vector2(3.01452, 1.28333)
+texture = ExtResource("1_dlv44")
