@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=4 format=3 uid="uid://ciur8h5le3xcp"]
-=======
 [gd_scene load_steps=5 format=3 uid="uid://bskr3ot2jsxkl"]
->>>>>>> origin/dev
 
 [ext_resource type="Script" path="res://scenes/supay.gd" id="1_rtgdq"]
 [ext_resource type="Texture2D" uid="uid://bvkdnwp0yyhfi" path="res://assets/supay/supay (14).png" id="1_v88yx"]
@@ -33,6 +29,3 @@ shape = SubResource("RectangleShape2D_i7gbh")
 shape = SubResource("CircleShape2D_v6xdi")
 
 [node name="Patrol(Node2D)" type="Node2D" parent="."]
-
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
