@@ -9,72 +9,134 @@ const WALK_SPEED := 140.0
 const RUN_SPEED  := 260.0
 const JUMP_VELOCITY := -400.0
 const JUMP_LARGE_VELOCITY := -520.0
-const DOUBLE_JUMP_TIME := 0.3  # ventana para doble salto
+
+# Multiplicadores del barrido según estado al iniciar (separados para que se note)
+const CROUCH_SWEEP_MULT_WALK := 0.90
+const CROUCH_SWEEP_MULT_RUN  := 1.35  # subido para que el “corriendo” recorra más
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-var last_jump_time: float = -1.0
+var is_punching: bool = false
+var is_crouching_once: bool = false
+
+var punch_last_frame: int = 0
+var crouch_last_frame: int = 0
+
+var crouch_dir: float = 1.0
+var crouch_sweep_speed: float = 0.0
 
 func _physics_process(delta: float) -> void:
-	# gravedad
+	# Gravedad
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# ====== INPUTS (todas teclas distintas) ======
-	var move_left  := Input.is_action_pressed(\"move_left\")   # A
-	var move_right := Input.is_action_pressed(\"move_right\")  # D
-	var run_pressed := Input.is_action_pressed(\"run_key\")    # Shift
-	var crouch_pressed := Input.is_action_pressed(\"crouch_key\") and is_on_floor()  # S
-	var jump_pressed := Input.is_action_just_pressed(\"jump_key\")   # W
-	var punch_pressed := Input.is_action_just_pressed(\"punch_key\") # J
+	# ===== INPUTS =====
+	var jump_large_pressed: bool = Input.is_action_just_pressed(\"jump_large_key\")  # SPACE
+	var jump_pressed: bool      = Input.is_action_just_pressed(\"jump_key\")         # W
+	var crouch_pressed: bool    = Input.is_action_just_pressed(\"crouch_key\")       # S
+	var punch_pressed: bool     = Input.is_action_just_pressed(\"punch_key\")        # J
 
-	# dirección horizontal (-1, 0, 1)
-	var dir := 0.0
-	if move_left:
-		dir -= 1.0
-	if move_right:
-		dir += 1.0
+	var move_left: bool  = Input.is_action_pressed(\"move_left\")   # A
+	var move_right: bool = Input.is_action_pressed(\"move_right\")  # D
+	var run_pressed: bool = Input.is_action_pressed(\"run_key\")    # SHIFT
 
-	# ====== MOVIMIENTO HORIZONTAL ======
-	if crouch_pressed:
-		velocity.x = move_toward(velocity.x, 0, RUN_SPEED)
-	else:
-		if dir != 0:
-			var speed := RUN_SPEED if run_pressed else WALK_SPEED
-			velocity.x = dir * speed
-			anim.flip_h = dir < 0
-		else:
-			velocity.x = move_toward(velocity.x, 0, RUN_SPEED)
+	var dir: float = 0.0
+	if move_left:  dir -= 1.0
+	if move_right: dir += 1.0
 
-	# ====== SALTO / DOBLE SALTO ======
-	if jump_pressed and is_on_floor() and not crouch_pressed:
-		var now := Time.get_ticks_msec() / 1000.0
-		if last_jump_time > 0.0 and (now - last_jump_time) <= DOUBLE_JUMP_TIME:
-			velocity.y = JUMP_LARGE_VELOCITY
-			anim.play(\"jump_large\")
-		else:
-			velocity.y = JUMP_VELOCITY
-			anim.play(\"jump\")
-		last_jump_time = now
+	# ===== Estado instantáneo útil para el barrido =====
+	var is_moving_now: bool = move_left or move_right
+	var speed_mag: float = abs(velocity.x)             # inercia del frame anterior
+	var looks_left: bool = anim.flip_h
 
-	# ====== ANIMACIONES ======
-	if punch_pressed and is_on_floor() and not crouch_pressed:
-		anim.play(\"punch\")
-	elif crouch_pressed:
+	# =========================================================
+	# PRIORIDADES (just_pressed primero):
+	# 1) jump_large  2) jump  3) crouch  4) punch  5) mover
+	# =========================================================
+
+	# 1) SALTO GRANDE
+	if jump_large_pressed and is_on_floor():
+		_cancel_actions()
+		velocity.y = JUMP_LARGE_VELOCITY
+		anim.play(\"jump_large\")
+
+	# 2) SALTO NORMAL
+	elif jump_pressed and is_on_floor():
+		_cancel_actions()
+		velocity.y = JUMP_VELOCITY
+		anim.play(\"jump\")
+
+	# 3) CROUCH (BARRIDO) — prioridad sobre mover si se presionó este frame
+	elif crouch_pressed and is_on_floor():
+		_cancel_actions()
+		is_crouching_once = true
 		anim.play(\"crouch\")
-	elif not is_on_floor():
+		crouch_last_frame = anim.sprite_frames.get_frame_count(\"crouch\") - 1
+
+		# Dirección del barrido según mirada actual
+		crouch_dir = -1.0 if looks_left else 1.0
+
+		# Detectar si venía \"corriendo\" al iniciar (o con inercia alta)
+		var is_running_now: bool = run_pressed and is_moving_now
+		var was_running: bool = is_running_now or (speed_mag >= RUN_SPEED * 0.40)  # umbral bajo para capturar inercia
+
+		# Base = máximo entre velocidad actual y baseline WALK/RUN
+		var baseline: float = (RUN_SPEED if was_running else WALK_SPEED)
+		var base: float = max(speed_mag, baseline)
+
+		# Multiplicador según estado (más largo si corría)
+		var mult: float = (CROUCH_SWEEP_MULT_RUN if was_running else CROUCH_SWEEP_MULT_WALK)
+
+		# Velocidad final del deslizamiento
+		crouch_sweep_speed = base * mult
+
+	# 4) PUNCH — prioridad sobre mover si se presionó este frame
+	elif punch_pressed and is_on_floor():
+		_cancel_actions()
+		is_punching = true
+		anim.play(\"punch\")
+		punch_last_frame = anim.sprite_frames.get_frame_count(\"punch\") - 1
+		velocity.x = move_toward(velocity.x, 0, RUN_SPEED)
+
+	# 5) MOVER (walk/run) — si no hubo inputs prioritarios arriba
+	elif is_moving_now:
+		_cancel_actions()  # moverse corta crouch/punch si estaban activos
+		var speed: float = (RUN_SPEED if run_pressed else WALK_SPEED)
+		velocity.x = dir * speed
+		anim.flip_h = dir < 0
+		if is_on_floor():
+			anim.play(\"run\" if run_pressed else \"walk\")
+
+	else:
+		# Sin acción: freno e idle si corresponde
+		if not is_punching and not is_crouching_once:
+			velocity.x = move_toward(velocity.x, 0, RUN_SPEED)
+			if is_on_floor() and abs(velocity.x) < 1.0:
+				anim.play(\"idle\")
+
+	# ===== BARRIDO ACTIVO: deslizar mientras dura crouch =====
+	if is_crouching_once and anim.animation == \"crouch\":
+		velocity.x = crouch_dir * crouch_sweep_speed
+
+	# ===== En el aire (si no hay acción especial) =====
+	if not is_on_floor() and not is_punching and not is_crouching_once:
 		if anim.animation != \"jump_large\":
 			anim.play(\"jump\")
-	else:
-		if dir == 0:
-			anim.play(\"idle\")
-		else:
-			if run_pressed:
-				anim.play(\"run\")
-			else:
-				anim.play(\"walk\")
 
 	move_and_slide()
+
+	# ===== Liberar acciones por frame (one-shot real) =====
+	if is_punching and anim.animation == \"punch\":
+		if anim.frame >= punch_last_frame:
+			is_punching = false
+
+	if is_crouching_once and anim.animation == \"crouch\":
+		if anim.frame >= crouch_last_frame:
+			is_crouching_once = false
+
+func _cancel_actions() -> void:
+	is_punching = false
+	is_crouching_once = false
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fc8e"]
@@ -572,7 +634,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"punch",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -647,4 +709,4 @@ position = Vector2(534, 303)
 scale = Vector2(2.61328, 2.88281)
 sprite_frames = SubResource("SpriteFrames_x6s1d")
 animation = &"punch"
-frame_progress = 0.824861
+frame_progress = 0.30407
