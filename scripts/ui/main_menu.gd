@@ -1,11 +1,16 @@
-extends Node
+extends Control
+signal start_game
+signal options_requested
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_button_pressed() -> void:
+	# Botón: Nuevo juego
+	emit_signal("start_game")
 
+func _on_button_2_pressed() -> void:
+	# Botón: Opciones (si luego quieres)
+	emit_signal("options_requested")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_button_3_pressed() -> void:
+	# Botón: Salir
+	get_tree().quit()
