@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ugsjpd740bm6"]
+[gd_scene format=3 uid="uid://b8oerymgce8ei"]
 
 [node name="Escenario2" type="Node2D"]
 position = Vector2(25, 8)
