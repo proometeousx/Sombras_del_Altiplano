@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://q25seboay12m"]
+[gd_scene load_steps=16 format=4 uid="uid://b1qeeowclrdq5"]
 
 [ext_resource type="Texture2D" uid="uid://beh0xiat58gvm" path="res://assets/ESCENARIO2/20251030_2319_Mystical Andean Plateau_simple_compose_01k8w4bkb2fyr9za98w0x4hchm (2).png" id="1_kewev"]
-[ext_resource type="Texture2D" uid="uid://dmomgsckrjefc" path="res://assets/ESCENARIO2/ROCAS.png" id="2_rn32g"]
+[ext_resource type="Texture2D" uid="uid://dmomgsckrjefc" path="res://assets/Tilesets/ROCAS.png" id="2_rn32g"]
 [ext_resource type="Texture2D" uid="uid://cxh7w2if7wf8u" path="res://assets/ESCENARIO2/desert.webp" id="3_ilxfv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qcbrk"]
-load_path = "res://.godot/imported/FONDO.png-2471f520335de8e39f91687ca7ed6894.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7mbp"]
 texture = SubResource("CompressedTexture2D_qcbrk")
