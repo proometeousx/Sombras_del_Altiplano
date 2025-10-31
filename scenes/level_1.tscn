@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn8eg0a7p6km1"]
+
+[ext_resource type="PackedScene" uid="uid://bil7txlwc2ktt" path="res://scenes/prueba.tscn" id="1_hymjk"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/SupayD/SupayD.tscn" id="2_c7uxq"]
+
+[node name="level1" type="Node"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_hymjk")]
+position = Vector2(477, 468)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_hymjk")]
+position = Vector2(1134, 355)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_hymjk")]
+position = Vector2(-250, 357)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_c7uxq")]
+position = Vector2(507, 464)

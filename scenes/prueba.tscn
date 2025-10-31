@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bil7txlwc2ktt"]
+
+[ext_resource type="Texture2D" path="res://assets/Rocky Roads/Backgrounds/desert_b.png" id="1_aj34h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3ykl"]
+size = Vector2(768, 127)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="DesertB" type="Sprite2D" parent="."]
+position = Vector2(140, 51)
+scale = Vector2(2.99219, 1)
+texture = ExtResource("1_aj34h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(137, 51.5)
+shape = SubResource("RectangleShape2D_f3ykl")
